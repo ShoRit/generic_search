@@ -85,6 +85,7 @@ def makeWebhookResult(req):
 
 		if req.get("result").get("action") == 'search_blog':
 			print("I will survive")
+			print("pikachu")
 			result=req.get("result")
 			print("I will survive")
 			parameters=result.get("parameters")
