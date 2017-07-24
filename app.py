@@ -88,6 +88,7 @@ def makeWebhookResult(req):
 				init_set=set()
 				temp_set=set()
 				count=0
+				print(any_list)
 				for item in any_list:
 					item=item.lower()
 					items=valid(item)
