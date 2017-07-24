@@ -81,13 +81,13 @@ def makeWebhookResult(req):
 
 	print("save me o lord")
 	try:
-		print("Save me")
+		#print("Save me")
 
 		if req.get("result").get("action") == 'search_blog':
-			print("I will survive")
-			print("pikachu")
+			# print("I will survive")
+			# print("pikachu")
 			result=req.get("result")
-			print("I will survive")
+			# print("I will survive")
 			parameters=result.get("parameters")
 			if len(parameters.get("any"))>0:
 				any_list=parameters.get('any')
@@ -123,7 +123,7 @@ def makeWebhookResult(req):
 								#dummy_set.add(i)
 								speech=speech+i+'\n'
 								break
-					print(dummy_set)
+					#print(dummy_set)
 				else:
 					for i in init_set:
 						speech=speech+i+"\n"	
