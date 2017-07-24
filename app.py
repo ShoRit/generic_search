@@ -77,11 +77,19 @@ def makeWebhookResult(req):
 			return known_edits1(item) 	
 		else:
 			return known_edits2(item)
+<<<<<<< HEAD
 
 	print("save me o lord")
 	try:
 		print("I wanna die")
+=======
+	
+	print("Help me o Lord")
+	try:
+		print("Save me")
+>>>>>>> bdec59e8438564815f56c0c694b040f7d9d25349
 		if req.get("result").get("action") == 'search_blog':
+			print("I will survive")
 			result=req.get("result")
 			print("I will survive")
 			parameters=result.get("parameters")
