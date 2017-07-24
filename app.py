@@ -143,6 +143,7 @@ def makeWebhookResult(req):
 	except Exception as error:
 		#speech=str(error)
 		speech="I am inside error module \n"
+		print(error)
 		#print("Speech:"+'\t'+speech+'\t'+"flag:"+'\t'+str(flag))
 		return {
 			"speech": speech,
