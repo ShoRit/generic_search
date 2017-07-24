@@ -81,11 +81,6 @@ def makeWebhookResult(req):
 
 	print("save me o lord")
 	try:
-		print("I wanna die")
-
-	
-	print("Help me o Lord")
-	try:
 		print("Save me")
 
 		if req.get("result").get("action") == 'search_blog':
