@@ -89,7 +89,7 @@ def makeWebhookResult(req):
 			result=req.get("result")
 			print("I will survive")
 			parameters=result.get("parameters")
-			if len(parameters.get("search_blog"))>0:
+			if len(parameters.get("any"))>0:
 				any_list=parameters.get('any')
 				
 				init_set=set()
