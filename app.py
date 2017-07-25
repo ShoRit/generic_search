@@ -34,12 +34,16 @@ def makeWebhookResult(req):
 	import re
 	import pickle
 	url_dict=defaultdict(list)
-	url=req.get("contexts").get("parameters").get("url")
+	url=req.get('result').get("contexts")[0].get("parameters").get("url")
 
 	ext_name=url.split('.')[1]
 
 	inp_pickle=ext_name+'_url_tags.pickle'
 	print(inp_pickle)
+
+	if not os.path.isfile(inp_pickle):
+		return {};
+
 	with open(inp_pickle,'rb') as handle:
 		url_dict=pickle.load(handle)
 
