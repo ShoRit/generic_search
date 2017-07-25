@@ -126,6 +126,8 @@ def makeWebhookResult(req):
 				
 				
 
+				data = [];
+
 				if len(init_set)>=10:
 					print(init_set)
 					#dummy_set=set()
@@ -134,18 +136,20 @@ def makeWebhookResult(req):
 							if j in i:	
 								#dummy_set.add(i)
 								speech=speech+i+'\n'
+								data.append(i);
 								break
 					#print(dummy_set)
 				else:
 					for i in init_set:
 						speech=speech+i+"\n"	
+						data.append(i);
 					# print(speech)		
-					
+
 				
 				return {
 					"speech": speech,
 					"displayText": speech,
-					"data":{},# {"facebook":{"attachment": {"type": "file","payload": {"url": "https://examples.api.ai/RichMessagesFiles/LoremIpsum.pdf"}}}},
+					"data" : data,# {"facebook":{"attachment": {"type": "file","payload": {"url": "https://examples.api.ai/RichMessagesFiles/LoremIpsum.pdf"}}}},
 					"contextOut": [],
 					"source": "apiai-onlinestore-shipping"
 				}
