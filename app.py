@@ -34,8 +34,13 @@ def makeWebhookResult(req):
 	import re
 	import pickle
 	url_dict=defaultdict(list)
+	url=req.get("contexts").get("parameters").get("url")
 
-	with open('url_tags.pickle','rb') as handle:
+	ext_name=url.split('.')[1]
+
+	inp_pickle=ext_name+'_url_tags.pickle'
+	print(inp_pickle)
+	with open(inp_pickle,'rb') as handle:
 		url_dict=pickle.load(handle)
 
 	model=defaultdict(lambda:1)
@@ -87,6 +92,7 @@ def makeWebhookResult(req):
 			# print("I will survive")
 			# print("pikachu")
 			result=req.get("result")
+
 			# print("I will survive")
 			parameters=result.get("parameters")
 			if len(parameters.get("any"))>0:
@@ -113,8 +119,10 @@ def makeWebhookResult(req):
 				
 				speech=""
 				
+				
+				
 
-				if len(init_set)>=6:
+				if len(init_set)>=10:
 					print(init_set)
 					#dummy_set=set()
 					for i in init_set:
@@ -143,7 +151,7 @@ def makeWebhookResult(req):
 				
 	except Exception as error:
 		#speech=str(error)
-		speech="I am inside error module \n"
+		speech="Sorry could you be a bit more specifc? \n"
 		print(error)
 		#print("Speech:"+'\t'+speech+'\t'+"flag:"+'\t'+str(flag))
 		return {

@@ -82,8 +82,14 @@ for item in any_list:
 	count+=1	
 	temp_set=set()	
 
-if len(init_set)>=6:
-	print(init_set)
+remove_set=set()
+for i in init_set:
+	if '/?replytocom' in i:
+		remove_set.add(i)
+
+init_set=init_set.difference(remove_set)		
+
+if len(init_set)>=10:
 	dummy_set=set()
 	for i in init_set:
 		for j in any_list:
